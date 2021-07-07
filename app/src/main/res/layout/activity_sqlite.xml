@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".sqlite.SqliteActivity">
+
+        <Button
+            android:id="@+id/btnSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="switch uri"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnRegisterObserver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="register observer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnUnregisterObserver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unregister observer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnInsert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="insert"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnInsertNull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="insert null"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnQuery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="query"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnQueryCurrentInsert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="query current insert"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="delete"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="transaction"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</layout>

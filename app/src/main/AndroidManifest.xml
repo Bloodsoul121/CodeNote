@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.blood.nativedemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <permission android:name="com.blood.sqlite_read" />
+    <permission android:name="com.blood.sqlite_write" />
+
+    <application
+        android:name=".MainApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NativeDemo">
+        <activity android:name=".test.TestActivity"></activity>
+        <activity android:name=".LifecycleActivity" />
+        <activity android:name=".property.PropertyActivity" />
+        <activity android:name=".qrcode.QrcodeActivity" />
+        <activity android:name=".jni.JniActivity" />
+        <activity android:name=".sqlite.SqliteActivity" />
+        <activity android:name=".aidl.JavaServiceActivity" />
+        <activity android:name=".aidl.ServiceActivity" />
+        <activity android:name=".webview.WebviewActivity" />
+        <activity android:name=".fragment_pop.FragmentPushPopActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".sqlite.SqliteContentProvider"
+            android:authorities="com.blood.nativedemo.SqliteContentProvider"
+            android:enabled="true"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:readPermission="com.blood.sqlite_read"
+            android:writePermission="com.blood.sqlite_write" />
+
+        <service android:name=".aidl.AidlService" />
+        <service
+            android:name=".aidl.MyService"
+            android:exported="true"
+            android:process=":aidl">
+            <intent-filter>
+                <action android:name="com.blood.nativedemo.aidl.MyService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

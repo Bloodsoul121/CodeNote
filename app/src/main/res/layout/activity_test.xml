@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".test.TestActivity"
+        tools:ignore="HardcodedText">
+
+        <Button
+            android:id="@+id/base64_encode"
+            style="@style/style_btn"
+            android:text="base64 encode" />
+
+        <Button
+            android:id="@+id/base64_decode"
+            style="@style/style_btn"
+            android:text="base64 decode" />
+
+        <Button
+            android:id="@+id/custom_json_to"
+            style="@style/style_btn"
+            android:text="custom json to string" />
+
+        <Button
+            android:id="@+id/custom_json_from"
+            style="@style/style_btn"
+            android:text="custom json to object" />
+
+    </LinearLayout>
+</layout>

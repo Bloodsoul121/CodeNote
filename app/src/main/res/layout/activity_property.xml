@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".property.PropertyActivity">
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="属性值"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/imei"
+            style="@style/style_btn"
+            android:onClick="@{clickListener}"
+            android:text="imei" />
+
+    </LinearLayout>
+</layout>
