@@ -21,6 +21,9 @@ class TestActivity : AppCompatActivity() {
     private var encode1 = "cXFx"
     private var encode2 = "Y29sbGVjdA=="
 
+    private var encryptText = "V0lGSQ==;V0lGSQ==;MTA=;UmVkbWk=;5Lit5ZyL6IGv6YCa;NTUz;MTAwMDAw;c2Rr;MS4wLjA=;MmMwMmU5OTUxYTQ5NDM5ODdhOGQ1NjhjMjM0MGMyOGRk;UmVkbWkgSzMw;dW5rbm93bg==;dW5rbm93bg==;emhfQ04=;ZTA6MWY6ODg6ZWU6NDU6NmQ=;YW5kcm9pZA==;UUtRMS4xOTA4MjUuMDAyIHRlc3Qta2V5cw==;Kzg2MTMyNjc5OTYyNzE=;cGhvbmU=;MTA4MCoyMTc1;R01UKzA4OjAwIEFzaWEvU2hhbmdoYWk=;ZTA6MWY6ODg6ZWU6NDU6NmQ=;MzAuODIuMTQzLjY5;RkU4MDo6NzNGQTo1MUU3OjM4OUE6RjgyNg==;dW5rbm93bg=="
+    private val encryptKey = "EzWhZiGfiIril1bTV5cISoktxy3kEIsZ8wi6p3N80UyoLxODuWURqGZMdHTxMozdjTboz3vTlmosaQRuEQb4YzEp7KM9VxAXY81QmoZA6zqrstLeSBmW4MwERdOKpjL1ueqgrvhiBcY2ggw8co3y5AqL7GiBHl82TLctSPSfwMAUBZxQw5ja7JljeMaXArMOldVM2tBf8bz3DhxqCLYfXGsKAdrgbBw1jX513QBGkHHiS33t3myYAUv0STxnIedU"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTestBinding.inflate(layoutInflater)
@@ -70,6 +73,12 @@ class TestActivity : AppCompatActivity() {
             val json = "{\"age\":18,\"name\":\"blood\"}"
             val customObj = JSON.parseObject(json, CustomObj::class.java)
             Log.i(TAG, "customJsonFrom: $customObj")
+        }
+
+        binding.encrypted.setOnClickListener {
+            Log.i(TAG, "encryptText before : $encryptText")
+            encryptText = RC4Crypt.encrypt(encryptText, encryptKey)
+            Log.i(TAG, "encryptText after : $encryptText")
         }
     }
 

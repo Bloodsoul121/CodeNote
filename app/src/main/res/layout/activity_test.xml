@@ -29,5 +29,10 @@
             style="@style/style_btn"
             android:text="custom json to object" />
 
+        <Button
+            android:id="@+id/encrypted"
+            style="@style/style_btn"
+            android:text="encrypted" />
+
     </LinearLayout>
 </layout>
