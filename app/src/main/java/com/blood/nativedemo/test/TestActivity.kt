@@ -1,6 +1,7 @@
 package com.blood.nativedemo.test
 
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Base64
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -80,6 +81,9 @@ class TestActivity : AppCompatActivity() {
             encryptText = RC4Crypt.encrypt(encryptText, encryptKey)
             Log.i(TAG, "encryptText after : $encryptText")
         }
+
+        val androidId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
+        Log.i(TAG, "androidId : $androidId")
     }
 
 }

@@ -10,6 +10,7 @@ import com.blood.nativedemo.aidl.JavaServiceActivity
 import com.blood.nativedemo.aidl.ServiceActivity
 import com.blood.nativedemo.databinding.ActivityMainBinding
 import com.blood.nativedemo.fragment_pop.FragmentPushPopActivity
+import com.blood.nativedemo.gps.GpsActivity
 import com.blood.nativedemo.jni.JniActivity
 import com.blood.nativedemo.property.PropertyActivity
 import com.blood.nativedemo.qrcode.QrcodeActivity
@@ -41,8 +42,11 @@ class MainActivity : AppCompatActivity(), BindingCallback<MainBean> {
 
     private fun requestPermissions() {
         val rxPermissions = RxPermissions(this)
-        rxPermissions
-                .requestEach(Manifest.permission.READ_PHONE_STATE)
+        rxPermissions.requestEach(
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+        )
                 .subscribe { permission: Permission ->  // will emit 2 Permission objects
                     if (permission.granted) {
                         Log.i(TAG, "granted: ${permission.name}")
@@ -71,6 +75,7 @@ class MainActivity : AppCompatActivity(), BindingCallback<MainBean> {
         list.add(MainBean("PropertyActivity", PropertyActivity::class.java))
         list.add(MainBean("LifecycleActivity", LifecycleActivity::class.java))
         list.add(MainBean("TestActivity", TestActivity::class.java))
+        list.add(MainBean("GpsActivity", GpsActivity::class.java))
         adapter.update(list)
     }
 
