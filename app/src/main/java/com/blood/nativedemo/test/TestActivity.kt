@@ -6,6 +6,7 @@ import android.util.Base64
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.blood.nativedemo.databinding.ActivityTestBinding
+import com.blood.nativedemo.thread.MyTask
 import com.ebanma.customjson.JSON
 import java.nio.charset.Charset
 
@@ -84,6 +85,12 @@ class TestActivity : AppCompatActivity() {
 
         val androidId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
         Log.i(TAG, "androidId : $androidId")
+
+        binding.asyncTask.setOnClickListener {
+            for (i in 1..10) {
+                MyTask().execute(i)
+            }
+        }
     }
 
 }

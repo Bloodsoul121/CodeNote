@@ -6,8 +6,12 @@ public class JavaTest1 {
 
     @Test
     public void test() {
-        Colors color = Colors.BLUE;
-        System.out.println(color.getValue());
+//        Colors color = Colors.BLUE;
+//        System.out.println(color.getValue());
+
+        String ip = "121.23.4.4";
+        System.out.println(ip.replaceAll("\\.", ""));
+
     }
 
     private enum Colors {

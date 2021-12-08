@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <permission android:name="com.blood.sqlite_read" />
     <permission android:name="com.blood.sqlite_write" />
@@ -15,10 +17,15 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NativeDemo">
-        <activity android:name=".gps.GpsActivity"></activity>
+        android:theme="@style/Theme.NativeDemo"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".apps.AppsActivity"></activity>
+        <activity android:name=".copy.CopyAssetActivity" />
+        <activity android:name=".viewpager2.ViewPager2Activity" />
+        <activity android:name=".gps.GpsActivity" />
         <activity android:name=".test.TestActivity" />
         <activity android:name=".LifecycleActivity" />
         <activity android:name=".property.PropertyActivity" />

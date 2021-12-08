@@ -1,0 +1,9 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package com.blood.nativedemo.thread
+
+public object ThreadTest14_c {
+    @kotlin.jvm.JvmStatic public final fun main(args: kotlin.Array<kotlin.String>): kotlin.Unit { /* compiled code */ }
+}
+

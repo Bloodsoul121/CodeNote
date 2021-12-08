@@ -34,5 +34,17 @@
             style="@style/style_btn"
             android:text="encrypted" />
 
+        <TextView
+            android:id="@+id/text"
+            android:ellipsize="end"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext" />
+
+        <Button
+            android:id="@+id/async_task"
+            style="@style/style_btn"
+            android:text="AsyncTask" />
+
     </LinearLayout>
 </layout>

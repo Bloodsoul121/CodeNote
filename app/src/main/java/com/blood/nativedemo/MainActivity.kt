@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blood.nativedemo.aidl.JavaServiceActivity
 import com.blood.nativedemo.aidl.ServiceActivity
+import com.blood.nativedemo.apps.AppsActivity
+import com.blood.nativedemo.copy.CopyAssetActivity
 import com.blood.nativedemo.databinding.ActivityMainBinding
 import com.blood.nativedemo.fragment_pop.FragmentPushPopActivity
 import com.blood.nativedemo.gps.GpsActivity
@@ -16,6 +18,7 @@ import com.blood.nativedemo.property.PropertyActivity
 import com.blood.nativedemo.qrcode.QrcodeActivity
 import com.blood.nativedemo.sqlite.SqliteActivity
 import com.blood.nativedemo.test.TestActivity
+import com.blood.nativedemo.viewpager2.ViewPager2Activity
 import com.blood.nativedemo.webview.WebviewActivity
 import com.tbruyelle.rxpermissions3.Permission
 import com.tbruyelle.rxpermissions3.RxPermissions
@@ -45,7 +48,9 @@ class MainActivity : AppCompatActivity(), BindingCallback<MainBean> {
         rxPermissions.requestEach(
                 Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
         )
                 .subscribe { permission: Permission ->  // will emit 2 Permission objects
                     if (permission.granted) {
@@ -76,6 +81,9 @@ class MainActivity : AppCompatActivity(), BindingCallback<MainBean> {
         list.add(MainBean("LifecycleActivity", LifecycleActivity::class.java))
         list.add(MainBean("TestActivity", TestActivity::class.java))
         list.add(MainBean("GpsActivity", GpsActivity::class.java))
+        list.add(MainBean("ViewPager2Activity", ViewPager2Activity::class.java))
+        list.add(MainBean("CopyAssetActivity", CopyAssetActivity::class.java))
+        list.add(MainBean("AppsActivity", AppsActivity::class.java))
         adapter.update(list)
     }
 
